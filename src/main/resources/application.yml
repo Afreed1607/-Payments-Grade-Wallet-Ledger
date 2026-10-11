@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: wallet-ledger
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/wallet}
+    username: ${DATABASE_USERNAME:wallet}
+    password: ${DATABASE_PASSWORD:wallet}
+  flyway:
+    enabled: true
+    baseline-on-migrate: false
+  jackson:
+    default-property-inclusion: non_null
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
