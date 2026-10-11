@@ -22,3 +22,6 @@ management:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+wallet:
+  reconciliation:
+    cron: ${RECONCILIATION_CRON:0 0 2 * * *}
